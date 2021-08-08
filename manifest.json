@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "Save Website Highlights",
+    "version": "0.1.0",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["script.js"],
+            "css": ["style.css"]
+        }
+    ],
+    "permissions": ["storage", "tabs"],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
