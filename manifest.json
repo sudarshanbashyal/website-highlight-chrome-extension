@@ -11,6 +11,12 @@
     ],
     "permissions": ["storage", "tabs"],
     "browser_action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_title": "Save Website Highlights"
+    },
+    "icons": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
     }
 }

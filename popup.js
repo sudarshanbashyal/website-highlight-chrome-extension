@@ -14,9 +14,10 @@ function displaySavedData() {
             document.querySelector('.clear-history').remove();
         } else {
             // create an li element and append it to the ul element after adding content
-            savedHistory.forEach(history => {
+            savedHistory.forEach((history, index) => {
                 const list = document.createElement('li');
                 list.innerHTML = `
+                <span>SN:</span> ${index + 1} <br>
                 <span>Website: </span> ${history.website}<br>
                 <span>Element: </span> ${history.element}<br>
                 <span>Selector: </span> ${history.selector}
