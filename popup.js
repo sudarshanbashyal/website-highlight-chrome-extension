@@ -4,6 +4,7 @@ function displaySavedData() {
     const dataList = document.querySelector('.saved-data');
     const emptyList = document.querySelector('.empty-list');
 
+    // change the innerHTML to empty in case the UI needs to be re-rendered after clearing the saved data.
     dataList.innerHTML = '';
 
     chrome.storage.local.get({ selectionHistory: [] }, result => {

@@ -2,7 +2,7 @@
 window.onload = disableAnchorLinks;
 
 function disableAnchorLinks() {
-    document.querySelectorAll('a, A').forEach(link => {
+    document.querySelectorAll('a').forEach(link => {
         link.setAttribute('onclick', 'return false;');
         link.removeAttribute('href');
         link.removeAttribute('data-url');
@@ -42,7 +42,7 @@ function highLightElement(el) {
     const targetElement = el.target;
 
     /*
-     *   Checking if the element or its parent is an anchor tag
+     *   Checking if the element or its parent node is an anchor tag
      *   If it is anchor tag, highlight it with blue; if not, use yellow
      */
     if (
@@ -51,10 +51,9 @@ function highLightElement(el) {
             targetElement.parentNode.tagName.toLowerCase() === 'a')
     ) {
         targetElement.style.backgroundColor = '#2A9DF4';
-        targetElement.style.border = '5px solid #2A9DF4';
     } else {
-        targetElement.style.backgroundColor = '#FCCF41';
         targetElement.style.border = '5px solid #FCCF41';
+        targetElement.style.backgroundColor = '#FCCF41';
     }
 
     targetElement.style.color = 'white';
