@@ -3,8 +3,7 @@ window.onload = disableAnchorLinks;
 
 function disableAnchorLinks() {
     document.querySelectorAll('a').forEach(link => {
-        link.setAttribute('href', 'javascript:void(0)');
-        link.style.pointerEvents = 'none';
+        link.setAttribute('onclick', 'return false;');
     });
 }
 
@@ -37,6 +36,7 @@ function getElementInfo(el) {
 
 function highLightElement(el) {
     const targetElement = el.target;
+    console.log(targetElement);
 
     /*
      *   Checking if the element or its parent is an anchor tag
@@ -48,8 +48,10 @@ function highLightElement(el) {
             targetElement.parentNode.tagName.toLowerCase() === 'a')
     ) {
         targetElement.style.backgroundColor = '#2F3180';
+        targetElement.style.border = '5px solid #2F3180';
     } else {
         targetElement.style.backgroundColor = '#FCCF41';
+        targetElement.style.border = '5px solid #FCCF41';
     }
 
     targetElement.style.color = 'white';
@@ -61,7 +63,6 @@ function saveElement(elementInfo) {
         // if the length of the array is more than 10, remove the last element
 
         const savedHistory = [elementInfo, ...result.selectionHistory];
-        console.log(savedHistory);
 
         if (savedHistory.length > 10) {
             savedHistory.length = 10;
